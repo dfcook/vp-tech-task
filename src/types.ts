@@ -12,7 +12,7 @@ type FacetOptionValue =
     }
   | string
 
-type FacetOption = {
+export type FacetOption = {
   identifier: string
   value: FacetOptionValue
   displayValue: string
@@ -20,7 +20,7 @@ type FacetOption = {
   priority: number
 }
 
-type Facet = {
+export type Facet = {
   identifier: string
   displayName: string
   priority: number
@@ -119,6 +119,7 @@ export enum SortType {
 
 export type ApiResponse = {
   pagination: Pagination
+  appliedFacets?: Record<string, Pick<FacetOption, 'identifier' | 'value'>[]>
   facets: Facet[]
   products: Product[]
 }
@@ -129,4 +130,5 @@ export type ApiRequest = {
   size: number
   additionalPages: number
   sort: SortType
+  facets: Record<string, Pick<FacetOption, 'identifier' | 'value'>[]>
 }

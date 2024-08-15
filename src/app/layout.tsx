@@ -64,7 +64,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-gray-300 `}>
         <NavigationMenu className="w-full max-w-full flex align-middle py-2">
           <NavigationMenuList>
             {categories.map((category) => (
